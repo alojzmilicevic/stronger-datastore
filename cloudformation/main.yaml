@@ -13,10 +13,6 @@ Parameters:
     Type: String
     AllowedValues: [PROVISIONED, PAY_PER_REQUEST]
     Default: PAY_PER_REQUEST
-  PITREnabled:
-    Type: String
-    AllowedValues: ['true', 'false']
-    Default: 'true'
 
 Resources:
   DynamoDBNested:
@@ -29,7 +25,6 @@ Resources:
       Parameters:
         TableName: !Sub "${StackNamePrefix}Table"
         BillingMode: !Ref TableBillingMode
-        PointInTimeRecoveryEnabled: !Ref PITREnabled
 
   IAMNested:
     Type: AWS::CloudFormation::Stack

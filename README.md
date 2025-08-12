@@ -4,7 +4,7 @@ Infrastructure as code for the Exercises datastore using AWS CloudFormation.
 
 ## Layout
 
-- `cloudformation/dynamodb-exercises.yaml` — DynamoDB table (PK: `id`)
+- `cloudformation/exercises.yaml` — DynamoDB table (PK: `id`)
 - `cloudformation/iam-exercises-access.yaml` — IAM role + managed policy to access the table
 - `cloudformation/main.yaml` — parent template that nests the above two
 - `data/example-item.json` — example document to insert
@@ -20,7 +20,7 @@ Infrastructure as code for the Exercises datastore using AWS CloudFormation.
 2. Upload the nested templates to the bucket under `cloudformation/`:
 
    ```sh
-   aws s3 cp cloudformation/dynamodb-exercises.yaml s3://$BUCKET/cloudformation/dynamodb-exercises.yaml
+   aws s3 cp cloudformation/exercises.yaml s3://$BUCKET/cloudformation/exercises.yaml
    aws s3 cp cloudformation/iam-exercises-access.yaml s3://$BUCKET/cloudformation/iam-exercises-access.yaml
    ```
 

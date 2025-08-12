@@ -19,7 +19,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: !Sub [
-        "https://s3.amazonaws.com/${Bucket}/cloudformation/dynamodb-exercises.yaml",
+        "https://s3.amazonaws.com/${Bucket}/cloudformation/exercises.yaml",
         { Bucket: !Ref ArtifactsBucketName }
       ]
       Parameters:
